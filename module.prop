@@ -1,0 +1,7 @@
+id=mi9stereo
+name=Xiaomi Mi 9 Stereo Speaker Mod
+version=v0.1
+versionCode=1
+author=Cr0wTom
+description=Earpiece acts as a secondary speaker for stereo effect
+minMagisk=1500
