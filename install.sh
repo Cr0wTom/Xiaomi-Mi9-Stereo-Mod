@@ -134,6 +134,7 @@ on_install() {
   # Extend/change the logic to whatever you want
   ui_print "- Extracting module files"
   unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
+  device_check
 }
 
 # Only some special files require specific permissions
@@ -153,4 +154,13 @@ set_permissions() {
   # set_perm  $MODPATH/system/lib/libart.so       0     0       0644
 }
 
-# You can add more functions to assist your custom script code
+device_check() {
+  bl=$(getprop ro.product.name)
+  device=${bl:0:7}
+  if ( [ $device = cepheus ] || [ $device = perseus ]); then
+    break
+  else
+    abort "Unsupported device or modified build.prop"
+  fi
+
+}

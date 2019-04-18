@@ -12,46 +12,46 @@
     <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode1" value="0" />
     <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode2" value="0" />
     <ctl name="QUAT_MI2S_RX_Voice Mixer Voip" value="0" />
-    <ctl name="ADC3 Volume" value="12" />
-    <ctl name="ADC4 Volume" value="12" />
-    <ctl name="Configuration" value="2" />
+    <ctl name="ADC1 Volume" value="8" />
+    <ctl name="ADC2 Volume" value="8" />
+    <ctl name="ADC3 Volume" value="8" />
+    <ctl name="ADC4 Volume" value="8" />
     <ctl name="QUAT_MI2S_RX Channels" value="One" />
     <ctl name="QUAT_MI2S_TX Channels" value="One" />
     <ctl name="QUAT_MI2S_RX SampleRate" value="KHZ_48" />
     <ctl name="External AMIC2 Mux" value="Dual_ADC" />
-
+    <ctl name="AMP Enable Switch" value="0" />
+    <ctl name="DSP1 Firmware" value="Protection" />
+    <ctl name="DSP1 Preload Switch" value="1" />
+    <ctl name="PCM Source" value="DSP" />
+    <ctl name="PCM Soft Ramp" value="4ms" />
+    <ctl name="AMP PCM Gain" value="17" />
+    <ctl name="DSP Block Bypass" value="Off" />
+    <ctl name="ASP TX1 Source" value="Zero" />
+    <ctl name="ASP TX2 Source" value="Zero" />
+    <ctl name="ASPTX Ref" value="None" />
+    <ctl name="COMP1 Switch" value="0" />
+    <ctl name="COMP2 Switch" value="0" />
+    <ctl name="HPHL Volume" value="20" />
+    <ctl name="HPHR Volume" value="20" />
+#
     <path name="deep-buffer-playback speaker">
-		<ctl name="SLIM RX0 MUX" value="AIF1_PB" />
-		<ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
-		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
-		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
-		<ctl name="EAR SPKR PA Gain" value="G_6_DB" />
-		<ctl name="RX0 Digital Volume" value="87" />
     </path>
-
+#
     <path name="low-latency-playback speaker">
-        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
-		<ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
-		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
-		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
-		<ctl name="EAR SPKR PA Gain" value="G_6_DB" />
-		<ctl name="RX0 Digital Volume" value="87" />
     </path>
 
     <path name="audio-ull-playback speaker">
         <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
-
+#
     <path name="compress-offload-playback speaker">
-        <ctl name="SLIM RX0 MUX" value="AIF1_PB" />
-		<ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
-		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia4" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="1" />
-		<ctl name="RX0 HPF cut off" value="MIN_3DB_150Hz"/>
-		<ctl name="EAR SPKR PA Gain" value="G_6_DB" />
-		<ctl name="RX0 Digital Volume" value="87" />
     </path>
 
     <path name="compress-offload-playback2 speaker">
@@ -461,7 +461,7 @@
 
     <path name="ultrasound-proximity">
         <ctl name="Ultrasound Enable" value="On"/>
-        <ctl name="Ultrasound Mode" value="625"/>
+        <ctl name="Ultrasound Mode" value="618"/>
     </path>
 
     <path name="ultrasound-output">
@@ -478,11 +478,17 @@
         <ctl name="CDC_IF TX4 MUX" value="DEC4" />
         <ctl name="ADC MUX4" value="AMIC" />
         <ctl name="AMIC MUX4" value="ADC1" />
-        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC1 Volume" value="8" />
     </path>
 
+
     <path name="speaker">
-        <ctl name="Configuration" value="2" />
+        <ctl name="DSP1 Firmware" value="Protection" />
+        <ctl name="PCM Source" value="DSP" />
+        <ctl name="ASP TX1 Source" value="DSPTX1" />
+        <ctl name="ASP TX2 Source" value="DSPTX1" />
+        <ctl name="ASPTX Ref" value="Ref" />
+        <ctl name="DSP Block Bypass" value="Off" />
     </path>
 
     <path name="speaker-protected">
@@ -490,10 +496,15 @@
     </path>
 
     <path name="voice-speaker">
-        <ctl name="Configuration" value="1" />
+        <ctl name="DSP1 Firmware" value="Protection" />
+        <ctl name="PCM Source" value="DSP" />
+        <ctl name="ASP TX1 Source" value="DSPTX1" />
+        <ctl name="ASP TX2 Source" value="DSPTX1" />
+        <ctl name="DSP Block Bypass" value="On" />
+        <ctl name="ASPTX Ref" value="Ref" />
     </path>
     <path name="voice-speaker-protected">
-        <ctl name="Configuration" value="1" />
+        <path name="speaker" />
     </path>
 
     <path name="handset">
@@ -552,13 +563,19 @@
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
-    <path name="sidetone-headphones">
+    <path name="voice-headphones">
+        <path name="headphones" />
+        <ctl name="COMP1 Switch" value="0" />
+        <ctl name="COMP2 Switch" value="0" />
+        <ctl name="HPHL Volume" value="16" />
+        <ctl name="HPHR Volume" value="16" />
     </path>
 
-    <path name="sidetone-handset">
-        <path name="sidetone-iir" />
-        <ctl name="IIR0 INP0 Volume" value="54" />
-        <ctl name="RX INT0 MIX2 INP" value="SRC0" />
+    <path name="hph-lowpower-mode">
+        <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
+    </path>
+
+    <path name="sidetone-headphones">
     </path>
 
     <path name="camcorder-dmic">
