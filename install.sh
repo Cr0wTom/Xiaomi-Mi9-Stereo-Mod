@@ -157,7 +157,7 @@ set_permissions() {
 device_check() {
   bl=$(getprop ro.product.name)
   device=${bl:0:7}
-  if ( [ $device = cepheus ] || [ $device = perseus ]); then
+  if ( [ $device = cepheus ] ); then
     break
   else
     abort "Unsupported device or modified build.prop"
